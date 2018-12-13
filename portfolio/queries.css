@@ -1,0 +1,48 @@
+/* CSS Document */
+
+@media only screen and (max-width: 1000px) {
+    .panel {
+        display: none
+    }
+    #intro h1 {
+        font-size: 2.4rem;
+    }
+    .content {
+        margin-left: 0
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    #intro {
+        top: 30%;
+    }
+    #intro > h1 {
+        font-size: 2rem;
+    }
+    section h2 {
+        white-space: normal;
+    }
+    #about .section_content {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-gap: 0;
+        text-align: center;
+    }
+    #about .section_image {
+        margin: 1rem auto;
+    }
+    #work .work_row, #work .work_row .reverse {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        grid-template-areas: 'img' 'content';
+        grid-gap: 0;
+    }
+    #work .work_content {
+        text-align: left;
+        padding: 1rem;
+    }
+    #work .work_img {
+        width: 80%;
+        margin: 0 auto;
+    }
+}
