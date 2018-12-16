@@ -1,0 +1,35 @@
+* {
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #0000ff;
+}
+
+.nav {
+    background-color: #800080;
+}
+
+.main {
+    background-color: #ffd700;
+    width: 75%;
+    height: 350px;
+    display: inline-block;
+    padding: 20px 0;
+}
+
+.main p {
+    margin: 0;
+}
+.aside {
+    background-color: #808080;
+    width: 25%;
+    float: right;
+    height: 350px;
+}
+
+.footer {
+    background-color: #00ffff;
+    float: none;
+}
