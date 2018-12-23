@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include header %>
+
+</head>
+<body>
+    <% include nav %>
+    <div class="container">
+        <section class="new-panel">
+            <h1>Hãy viết ra câu nói/câu chuyện yêu thích của bạn trong 200 ký tự ._.</h1>
+            <form id="form" class="form" action="/new" method="post">
+                <div class="textarea_container">
+                    <textarea name="quote" id="form_content" minlength="10" maxlength="200" required></textarea>
+                    <div id="wordcount"><span id="word_count">200</span>/200</div>                    
+                
+                </div>
+                <button class="btn emphasized" type="submit">Gửi đi câu nói hay nhất thời đại 🏹</button>
+            </form>
+        
+        </section>
+    
+    </div>
+    
+    <script src="/js/new.js" ></script>
+</body>
+</html>
