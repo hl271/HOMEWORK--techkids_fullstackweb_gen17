@@ -2,8 +2,8 @@ const mongoose = require('mongoose')
 const fs = require('fs')
 
 const Quote = require('./Quote')
-
-mongoose.connect('mongodb://localhost:27017/viet-vote-app', {useNewUrlParser: true}, () => {
+const url = process.env.MONGODB_URI || 'mongodb://localhost:27017/viet-vote-app'
+mongoose.connect(url, {useNewUrlParser: true}, () => {
     console.log('CONNECTED!')
 })
 const dbQuery = {
