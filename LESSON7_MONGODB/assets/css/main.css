@@ -1,0 +1,143 @@
+/* Apply to all files */
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Condensed');
+
+* {
+    font-family: 'Roboto Condensed', sans-serif;
+    box-sizing: border-box;
+    color: #f3f1f1;
+}
+
+body {
+    background-color: #1d1b1b;
+}
+.container {
+    margin: 20px 15% 1.5rem 15%;
+}
+
+#nav_container, .nav {
+    padding: 1rem 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#nav_container a, .nav a {
+    display: inline-block;
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    margin: 10px;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background-color: transparent;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+#nav_container a:hover, #nav_container a.active, .nav a:hover, .nav a.active {
+    background-color: #f1f1f1;
+    color: #171717;
+}
+
+.btn {
+    padding: 0.5rem 1rem;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid #171717;
+    background-color: #fff;
+    color: #171717;
+}
+
+.btn.emphasized {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    margin: 10px;
+
+}
+
+
+/* Apply to index.ejs */
+.vote-panel {
+    text-align: center;
+    margin: 160px auto;    
+}
+.vote-panel h1 {
+    font-size: 2rem;
+    font-weight: 300;
+}
+#react_container ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Apply to all.ejs */
+.header {
+    text-align: center;
+}
+
+.quote_item {
+    margin-bottom: 1rem;
+    background-color: #111111;
+    border-radius: 15px;
+    padding: 1.25rem;
+}
+
+.quote_item h2 {
+    font-size: 1.5rem;
+    font-weight: 350;
+    margin-top: 0;
+}
+
+
+/* Apply to new.ejs */
+.new-panel {
+    margin: 0 auto;
+    text-align: center;
+} 
+
+.textarea_container {
+    width: 65%;
+    margin: 0 auto;
+}
+.textarea_container textarea {
+    border-radius: 10px;
+    background-color: #fff;
+    color: #171717;
+    width: 100%;
+    height: 9rem;
+    padding: 0.75rem;
+    font-size: 1rem;
+    outline: none;
+}
+
+#wordcount {
+    text-align: right;
+
+}
+
+.form .btn {
+    font-weight: bold;
+}
+
+
+
+/* Queries */
+@media only screen and (max-width: 600px) {
+    .container {
+        margin: 20px 5% 1.5rem 5%;
+    }
+    .vote-panel {
+        margin: 80px auto;
+    }
+    .textarea_container {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 950px) {
+    
+    #react_container .btn {
+        font-size: 1rem;
+    }
+}

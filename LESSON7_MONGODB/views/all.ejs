@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include header %>
+</head>
+<body>
+    <% include nav %>
+    <div class="header">
+        <h1>Bảng xếp hạng</h1>
+        <div class="nav">
+            <a href="/all/like" <% if (reaction === 'like') { %>class="active"<%}%>>Yêu thích nhất ❤️</a>
+            <a href="/all/dislike" <% if (reaction === 'dislike') { %>class="active"<%}%>>Ghét nhất 😡</a>
+            <a href="/all/spam" <% if (reaction === 'spam') { %>class="active"<%}%>>Xàm nhất 😈</a>
+        </div>
+        
+    </div>
+    <div class="container">
+    
+
+        <section>
+            <% quotes.forEach(function(quote) { %>
+                <div class="quote_item">
+                    <h2><!-- Quote content --><%= quote.content %></h2>
+                    <div class="like">Hay / Tâm đắc 👏: <!-- Like count --><%= quote.reaction.like %></div>
+                    <div class="dislike">Không thích 👎: <!-- Dislike count --><%= quote.reaction.dislike %></div>
+                    <div class="spam">Nhảm/Spam 🗑: <!-- Spam count --><%= quote.reaction.spam %></div>
+                </div>
+
+            <% }) %>
+        </section>
+    </div>
+</body>
+</html>

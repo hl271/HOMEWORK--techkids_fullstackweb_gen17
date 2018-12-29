@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include header %>
+</head>
+<body>
+    <% include nav %>
+    <div class="container">
+        <section class="vote-panel">
+        <% if (question === null) {%>
+            <h1>Hãy là người đầu tiên viết quote! Tên của bạn sẽ được lưu vào sử sách ✍🏼 ✍🏼 ✍🏼 </h1>
+        <%} else {%>
+            <h1><!-- Đưa câu nói vào đây --><%= question.content %></h1>
+            <span id="span_id" style="display:none"><%=question.id %></span>
+            <div id="react_container">
+                <button class="btn" id="btn_like"> Hay / Tâm đắc 👏</button>
+                <button class="btn" id="btn_dislike">Không thích 👎</button>
+                <button class="btn" id="btn_spam">Nhảm/Spam 🗑</button>
+                
+            </div>
+        <%}%>
+
+        </section>    
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="/js/vote.js"></script>
+</body>
+</html>
