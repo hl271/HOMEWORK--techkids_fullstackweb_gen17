@@ -1,0 +1,124 @@
+/* Style Sticky Up-to-top button */
+#stickyUpToTop {
+  position: fixed;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: #171717;
+  bottom: 30px;
+  right: 30px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+#stickyUpToTop .fas {
+  color: #eeeeee;
+  font-size: 2rem;
+  line-height: 3.5rem;
+}
+
+/* Style dark theme */
+body {
+  background-color: #FDF6E3
+}
+.card {
+  background-color: #171717;
+  color: #eeeeee;
+  border: none;
+  box-shadow: 5px 5px 15px 2px #cccccc;
+}
+
+/* Style Loading Spinner */
+.lds-grid {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+.lds-grid div {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: rgb(255, 4, 4);
+  animation: lds-grid 1.2s linear infinite;
+}
+.lds-grid div:nth-child(1) {
+  top: 6px;
+  left: 6px;
+  animation-delay: 0s;
+}
+.lds-grid div:nth-child(2) {
+  top: 6px;
+  left: 26px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(3) {
+  top: 6px;
+  left: 45px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(4) {
+  top: 26px;
+  left: 6px;
+  animation-delay: -0.4s;
+}
+.lds-grid div:nth-child(5) {
+  top: 26px;
+  left: 26px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(6) {
+  top: 26px;
+  left: 45px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(7) {
+  top: 45px;
+  left: 6px;
+  animation-delay: -0.8s;
+}
+.lds-grid div:nth-child(8) {
+  top: 45px;
+  left: 26px;
+  animation-delay: -1.2s;
+}
+.lds-grid div:nth-child(9) {
+  top: 45px;
+  left: 45px;
+  animation-delay: -1.6s;
+}
+@keyframes lds-grid {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Style rating stars */
+.stars-outer {
+  display: inline-block;
+  position: relative;
+  font-family: 'Font Awesome\ 5 Free';
+  font-weight: 200;
+}
+ 
+.stars-outer::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+}
+ 
+.stars-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 0;
+  font-weight: 900;
+}
+ 
+.stars-inner::before {
+  content: "\f005 \f005 \f005 \f005 \f005";
+  color: #f8ce0b;
+}
