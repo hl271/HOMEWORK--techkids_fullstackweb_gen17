@@ -1,0 +1,3 @@
+[submodule "MINIHACK"]
+	path = MINIHACK
+	url = ./MINIHACK/
