@@ -1,0 +1,11 @@
+<div class="games-panel p-3">
+    <h3>Games created</h3><hr>
+    <div class="games-panel my-4">
+        <div class="list-group">
+            <% games.forEach(function(game){%>
+            <a href="/games/<%=game.title%>" class="game-item list-group-item list-group-item-action border border-pink"><%=game.title%></a>
+            <%})%>
+        </div>
+    </div>
+
+</div>

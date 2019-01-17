@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%include header %>
+    </head>
+    <body>
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-pink">
+                    <li class="breadcrumb-item text-pink"><strong><a class="text-pink" href="/">Home</a></strong></li>
+                    <li class="breadcrumb-item active text-pink" aria-current="page"><%=game.title%></li>
+                </ol>
+            </nav>
+            <h2 class="mt-4">ScoreKeeper</h2>
+            <hr>
+            <div class="score-panel mt-4 mb-5">
+                <input type="hidden" value="<%=game._id%>" id="gameid"/>
+                <table id="score-table" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <% game.players.forEach(function(player){ %>
+                            <th scope="col"><%=player.name%></th>
+                        <%})%>
+                    </tr>
+                    <tr id="SOS-row">
+                        <th scope="row">Sum of Score (<span class="SOS"></span>)</th>
+                        <% game.players.forEach(function(player, index) {%>
+                        <td class="SOPS "><span class="<%=index%>"></span></td>
+                        <%})%>
+                    </tr>
+                    </thead>
+                    <tbody id="tbody" class="">
+                    <% game.rounds.forEach(function(round, index) {%> 
+                    <tr class="round <%=index%>" id="">
+                        <input type="hidden" name="round" value="<%=index%>"/>
+                        <th scope="row">Round <%=index+1%></th>
+
+                        <% round.forEach(function(score, index) {%> 
+                        
+                        <td>
+                            <input type="hidden" name="player" value="<%=index%>"/>    
+                            <input class="form-control player-score <%=index%> rounded border border-secondary" type="number"  step="1" value="<%=score%>">
+                        </td>
+                        <%})%>
+
+                    </tr>
+                    <%})%>
+                    
+                    </tbody>
+                </table>
+                <button class="btn btn-danger mx-auto btn-pink d-block" id="addRoundBtn">ADD ROUND</button>
+            </div>
+            <% include AllGames %>
+        
+        </div>
+        <%include bootstrap_js %>
+        <script src="/js/playscreen.js"></script>
+    </body>
+</html>

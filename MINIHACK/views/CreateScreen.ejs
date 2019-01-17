@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%include header %>
+    </head>
+    <body>
+        <div class="container">
+            <h2 class="mt-4">ScoreKeeper</h2>
+            <hr>
+            <div class="form-panel mt-4 mb-5">
+                <form method="post" action="/games/new" id="newGameForm">
+                    <div id="title_input-panel" class="form-group">
+                        <input id="title" name="title" class="form-control border-pink" placeholder="Title of your game">
+                        <span id="validate-title"></span>
+                    </div>
+                    <div id="player_input-panel" class="form-group">
+                        <h4>Players</h4><hr>
+                        <input name="user" class="form-control d-block my-2 rounded border-pink" placeholder="Username" required/>
+                        <input name="user" class="form-control d-block my-2 rounded border-pink" placeholder="Username" required/>
+                    
+                    </div>
+                    <button id="addNewPlayerBtn" type="button" class="btn d-block mx-auto text-success border border-success"><i class="fas fa-plus"></i></button>
+                    <button class="btn btn-pink d-block mx-auto my-3" id="submitBtn" type="button">CREATE NEW GAME</button>
+                </form>
+            </div>
+
+            <% include AllGames %>
+        
+        </div>
+        <%include bootstrap_js %>
+        <script src="/js/createscreen.js"></script>
+    </body>
+</html>

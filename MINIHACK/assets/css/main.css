@@ -1,0 +1,60 @@
+body {
+    background-color: #fbfef9 !important;
+    color: #333333;
+    padding-bottom: 50px;
+}
+
+.btn-pink {
+    background-color: #BF1363;
+    color: #fbfef9;
+    padding: 0.5rem 1rem;
+}
+
+hr {
+    margin: 0;
+}
+
+.border-pink {
+    border: 1px solid #bf1363 !important;
+}
+
+.bg-pink {
+    background-color:  rgba(191, 19, 99, 0.5);
+}
+
+.text-pink {
+    color: #BF1363 ;
+}
+
+/* ALLGAMES PART STYLING */
+.game-item:hover {
+    background-color: #BF1363;
+    color: #fbfef9;
+    font-weight: bold;
+}
+
+/* PLAYSCREEN STYLING */
+#SOS-row {
+    color: #fbfef9;
+    font-weight: bold;
+    background-color: #BF1363;
+}
+
+input.player-score {
+    width: 60%;
+}
+
+#score-table {
+    border-top: none;
+    border-bottom: 1px solid #BF1363;
+}
+
+#score-table thead tr th {
+    border-top: none;
+}
+
+@media only screen and (max-width: 1000px) {
+    input.player-score {
+        width: 100%;
+    }
+}
