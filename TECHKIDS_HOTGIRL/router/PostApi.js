@@ -10,11 +10,13 @@ PostApi.use((req, res, next)=> {
 
 PostApi.get('/', (req, res, next)=> {
     const {page=1, perpage=5} = req.query
+    console.log(perpage)
     const searchQueries = !!req.query.search ? {title: {$regex: req.query.search, $options: "i"}} : {}
     console.log(searchQueries)
     Post.find(searchQueries)
-        .skip((page-1)*perpage)
-        .limit(perpage)
+        .skip((page-1)*parseInt(perpage))
+        .limit(parseInt(perpage))
+        .populate('author', '-password -_id -__v')
         .then(allPosts => {
             res.json(allPosts)
         })
@@ -24,7 +26,10 @@ PostApi.get('/', (req, res, next)=> {
         })
 })
 PostApi.get('/:id', (req, res, next)=> {
+    console.log(req.params.id)
     Post.findById(req.params.id)
+        .populate('author')
+        .populate('comments.author')
         .then(foundPost => {
             res.json(foundPost)
         })
@@ -41,8 +46,40 @@ PostApi.post('/', (req, res, next)=> {
         })
         .catch(error => {
             res.send({error})
+        })    
+})
+
+PostApi.post('/comments', (req, res, next) => {
+    const {author, comment, postid} = req.body
+    const newComment = {author, comment}
+    Post.findById(postid)
+        .then(foundPost => {
+            if (!foundPost) res.send({error: 'Post not foound'})
+            else {
+                foundPost.comments.push(newComment)
+                return foundPost.save()
+            }
+
+        })
+        .then(newComment => {
+            res.json(newComment)
+        })
+        .catch(error => {
+            res.send(error)
         })
 })
+
+PostApi.post('/many', (req, res, next) => {
+    const {posts} = req.body
+    Post.create(posts)
+        .then(posts => {
+            res.json(posts)
+        })
+        .catch(error => {
+            res.send(error)
+        })
+})
+
 PostApi.put('/:id', (req, res, next)=> {
     const {title, description, picture, author} = req.body
     Post.findById(req.params.id)
@@ -70,6 +107,16 @@ PostApi.delete('/:id', (req, res, next)=> {
         })
         .catch(error => {
             res.send({error})
+        })
+})
+
+PostApi.delete('/', (req, res, next) => {
+    Post.deleteMany({})
+        .then(result => {
+            res.send(result)
+        })
+        .catch(error => {
+            res.send(error)
         })
 })
 

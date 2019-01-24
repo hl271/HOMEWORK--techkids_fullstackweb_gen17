@@ -1,0 +1,23 @@
+.form-panel {
+    width: 60%;
+    margin: 3rem auto;
+    text-align: center;
+    padding: 2.5rem 2rem;
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+}
+
+.form-panel input {
+    margin: 1rem 0;
+    background-color: #171717;
+    color: #ffffff;
+    border-radius: 0;
+}
+
+
+
+@media only screen and (max-width: 800px) {
+    .form-panel {
+        width: 80%;
+    }
+}

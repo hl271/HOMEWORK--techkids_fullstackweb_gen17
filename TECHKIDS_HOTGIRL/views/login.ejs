@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <% include header %>
+        <link href="/css/particles.css" rel="stylesheet">
+        <title>Login Page</title>
+    </head>
+    <body>
+        <!-- particles.js container -->
+        <div id="particles-js"></div>
+        <!-- Main page -->
+        <div class="container">
+            <div class="form-panel">
+                <h2 class="text-white">Đăng nhập</h2>
+                <form action="/api/auth/login" method="post">
+                    <div class="form-group">
+                        <input class="form-control" id="form_name" placeholder="Your name" name="username" />
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control" id="form_pass" placeholder="Your password" name="password" />
+                    </div>
+                    <p id="msg-holder"></p>
+                    <!-- <input type="hidden" name="url" value=""/> -->
+                    <button type="submit" class="btn btn-light">Submit</button>
+                </form>
+            </div>
+        </div>
+        <% include bootstrap_js %>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="/js/particles.js"></script>
+        <script src="/js/login.js"></script>
+    </body>
+</html>
