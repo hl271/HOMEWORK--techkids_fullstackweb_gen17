@@ -10,8 +10,8 @@ export default class GameList extends Component {
 			allGames: []
 		}
 	}
-	componentDidMount() {
-		axios.get('http://localhost:4000/games/')
+	api_getAllGames = () => {
+		axios.get(this.props.apiURL + '/games/')
 				.then(({data}) => {
 					console.log(data)
 					if (!!data.error) console.log(data.error)
@@ -24,6 +24,12 @@ export default class GameList extends Component {
 				.catch((error) => {
 					console.log(error)
 				})
+	}
+	componentDidMount() {
+		this.api_getAllGames()
+	}
+	componentDidUpdate(prevProps) {
+		
 	}
 	renderGameList = () => {
 		return this.state.allGames.map(game => {

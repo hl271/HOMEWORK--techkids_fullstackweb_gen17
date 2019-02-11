@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TableOfScore from '../components/PlayScreen/TableOfScore'
 import BreadcrumbNav from '../components/PlayScreen/BreadCrumb'
-const API_URL = 'http://localhost:4000'
+// import GameList from '../components/GameList'
 export default class PlayScreen extends Component {
   // constructor(props) {
   //   super(props)
@@ -9,10 +9,12 @@ export default class PlayScreen extends Component {
   // }
   render() {
     const {title} = this.props.match.params
+    const {apiURL} = this.props
     return (
       <div style={{marginBottom: '2rem'}}>
         <BreadcrumbNav title={title}/>
-        <TableOfScore title={title} apiURL={API_URL}/>
+        <TableOfScore title={title} apiURL={apiURL}/>
+        {/* <GameList apiURL={API_URL}/> */}
       </div>
     )
   }

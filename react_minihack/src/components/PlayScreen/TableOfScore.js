@@ -11,14 +11,15 @@ export default class TableOfScore extends Component {
 
     }
   }
-  api_checkForGameData = ()=> {
+  api_checkForGameData = (isMounted)=> {
+    console.log(isMounted)
       const {title} = this.props
       axios.get(this.props.apiURL + '/games/' + title)
           .then(res => {
             const {error, game} = res.data
             if (error) console.log(error)
-            else if (!game) this.setState({title: 'This game was not found!'})
-            else {
+            else if (!game && isMounted) this.setState({title: 'This game was not found!'})
+            else if (isMounted) {
               this.setState({title: game.title, game: game})
             }
           })
@@ -26,10 +27,19 @@ export default class TableOfScore extends Component {
   }
    
     componentDidMount() {
-      this.api_checkForGameData()
+      this._isMounted = true
+      this.api_checkForGameData(this._isMounted)
   }
-  componentDidUpdate() {
-      this.api_checkForGameData()
+  componentDidUpdate(prevProps) {
+      if (prevProps.title !== this.props.title) {
+        console.log('fetch game data')
+        this.api_checkForGameData(this._isMounted)
+        
+      }
+      console.log('table of score component updated')
+  }
+  componentWillMount() {
+    this._isMounted = false
   }
   renderPlayerNames= () => {
     let players = []

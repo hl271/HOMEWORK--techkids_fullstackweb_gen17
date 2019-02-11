@@ -12,15 +12,17 @@ import CreateScreen from './pages/CreateScreen'
 import PlayScreen from './pages/PlayScreen'
 import GameList from './components/GameList'
 
+const API_URL = 'https://api-scorekeeper.herokuapp.com'
+
 class App extends Component {
   render() {
     return (
       <Router>
         <Container style={{marginTop: '2rem', marginBottom: '3.5rem'}}>
           <Header/>
-          <Route exact path="/" component={CreateScreen}/>
-          <Route path="/:title" component={PlayScreen}/>
-          <GameList/>
+          <Route exact path="/" render={(props) => <CreateScreen {...props} apiURL={API_URL}/>} />
+          <Route path="/:title" render={(props) => <PlayScreen {...props} apiURL={API_URL}/>}/>
+          <GameList apiURL={API_URL}/>
         </Container>
       </Router>
     );

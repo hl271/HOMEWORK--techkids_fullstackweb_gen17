@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
 import CreateGameForm from '../components/CreateScreen/CreateGameForm'
+// import GameList from '../components/GameList'
 
-const API_URL = 'http://localhost:4000'
 
 export default class CreateScreen extends Component {
   render() {
+    const {apiURL} = this.props
     return (
       <div>
-        <CreateGameForm apiURL={API_URL}/>
+        <CreateGameForm apiURL={apiURL}/>
+        {/* <GameList apiURL={API_URL}/> */}
       </div>
     )
   }

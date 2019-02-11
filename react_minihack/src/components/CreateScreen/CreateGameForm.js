@@ -43,7 +43,7 @@ class CreateGameForm extends Component {
                 console.log(res)
                 if (res.data.error) this.setState({validateQuote: res.data.error.msg})
                 else if (!!res.data.gameURL) {
-                    this.props.history.push(`/${res.data.gameURL}`)
+                    window.location.href=`/${res.data.gameURL}`
                 }
             })
             .catch(error => {
