@@ -1,0 +1,46 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\dangh\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add express mongoose bodyParser
+
+PATH: 
+  C:\Users\dangh\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\dangh\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files\PuTTY;C:\Program Files\nodejs;C:\Program Files\Sublime Text 3;D:\INSTALL\Calibre;C:\Program Files\Git\cmd;D:\INSTALL\MongoDB\Server\4.0\bin;D:\INSTALL\Microsoft VS Code;D:\INSTALL\Java\jdk1.8.0_181\bin;C:\cygwin64\bin;C:\Program Files\Git LFS;D:\INSTALL\Microsoft VS Code\bin;C:\Users\dangh\AppData\Local\Microsoft\WindowsApps;C:\Users\dangh\AppData\Roaming\npm;D:\Install Programs\Microsoft VS Code\bin;D:\INSTALL\Heroku\bin;D:\INSTALL\Android\SDK\platform-tools;D:\INSTALL\Microsoft VS Code\bin;C:\ProgramData\Miniconda3\Library\mingw-w64\bin;C:\ProgramData\Miniconda3;C:\ProgramData\Miniconda3\Library\usr\bin;C:\ProgramData\Miniconda3\Scripts;C:\Users\dangh\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
+
+Yarn version: 
+  1.7.0
+
+Node version: 
+  8.11.3
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.npmjs.org/bodyParser: Not found
+      at Request.params.callback [as _callback] (C:\Users\dangh\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:65656:18)
+      at Request.self.callback (C:\Users\dangh\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:134675:22)
+      at emitTwo (events.js:126:13)
+      at Request.emit (events.js:214:7)
+      at Request.<anonymous> (C:\Users\dangh\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:135658:10)
+      at emitOne (events.js:116:13)
+      at Request.emit (events.js:211:7)
+      at IncomingMessage.<anonymous> (C:\Users\dangh\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:135578:12)
+      at Object.onceWrapper (events.js:313:30)
+      at emitNone (events.js:111:20)
+
+npm manifest: 
+  {
+    "name": "api_minihack",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
